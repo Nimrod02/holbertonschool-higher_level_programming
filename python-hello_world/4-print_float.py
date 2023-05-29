@@ -4,4 +4,4 @@ import math
 
 number = 3.14159
 
-print(f"Float: %.2f" % number)
+print(f"Float: %.2f\n" % number)
