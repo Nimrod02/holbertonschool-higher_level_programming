@@ -9,6 +9,8 @@ def roman_to_int(roman_string):
 
     for char in reversed(roman_string):
         value = rom_val.get(char, 0)
+        if not rom_val:
+            return None
         if value >= prev_value:
             rom_int += value
         else:
