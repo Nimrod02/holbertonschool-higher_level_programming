@@ -5,6 +5,6 @@ def uniq_add(my_list=[]):
     for num in my_list:
         uniq_value.add(num)
 
-        uniq_sum = sum(uniq_value)
+    uniq_sum = sum(uniq_value)
 
     return uniq_sum
