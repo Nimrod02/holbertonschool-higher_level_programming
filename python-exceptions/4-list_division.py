@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     result = []
+    if not my_list_1 or not my_list_2 or not list_length:
+        return None
 
     for index in range(list_length):
         try:
