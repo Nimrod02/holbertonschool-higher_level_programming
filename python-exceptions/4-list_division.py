@@ -6,9 +6,7 @@ def list_division(my_list_1, my_list_2, list_length):
 
     for index in range(list_length):
         try:
-            dividend = my_list_1[index] if index < len(my_list_1) else 0
-            divisor = my_list_2[index] if index < len(my_list_2) else 1
-            div_result = dividend / divisor
+            div_result = my_list_1[index] / my_list_2[index]
 
         except TypeError:
             print("wrong type")
