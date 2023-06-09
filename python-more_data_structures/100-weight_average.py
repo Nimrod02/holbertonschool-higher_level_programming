@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
-    try:
-        sum = 0
-        for sub in my_list:
-            for index in sub:
-                sum = sum + index
-        res = sum / len(my_list)
-        return res
-    except TypeError:
-        pass
+    if my_list is not None:
+            res = 0
+            recurrence = 0
+            for index in my_list:
+                (weight, occurrence) = index
+                res += (weight * occurrence)
+                recurrence += occurrence
+                return (res / recurrence) if recurrence > 0 else 0
+            else:
+                return 0
