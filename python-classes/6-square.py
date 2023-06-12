@@ -11,8 +11,7 @@ class Square:
     Args:
         size : size of square
     """
-    __size = 0
-    __position = (0, 0)
+
 
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
@@ -49,7 +48,6 @@ class Square:
     def my_print(self):
         if self.size == 0:
             print()
-        print(self.position)
         for _ in range(self.__position[1]):
             print()
         for _ in range(self.__size):
