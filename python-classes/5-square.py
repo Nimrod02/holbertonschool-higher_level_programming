@@ -29,5 +29,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
     def my_print(self):
-        print("\n".join (["#" * self.__size for rows in range (len(self.__size))]))
+        print("\n".join(["#" * self.__size
+                        for rows in range(self.__size)]))
