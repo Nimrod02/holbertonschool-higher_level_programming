@@ -18,5 +18,3 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> add_integer('a', 'b')
 Traceback (most recent call last):
 TypeError: a must be an integer
-
-
