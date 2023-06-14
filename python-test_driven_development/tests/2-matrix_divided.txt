@@ -54,3 +54,7 @@ ZeroDivisionError: division by zero
 Traceback (most recent call last):
     ...
 TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+>>> matrix_divided('a', 4)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
