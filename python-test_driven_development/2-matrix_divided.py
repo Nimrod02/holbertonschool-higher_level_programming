@@ -1,29 +1,19 @@
 #!/usr/bin/python3
-"""module 1 divided matrix
-"""
-
-
 def matrix_divided(matrix, div):
-    """matrix_divided
-
-    Args:
-        matrix (): matrix
-        div (): div, rounded to 2 decimal places
-    """
-    errormessage = "matrix must be a matrix (list of lists) of integers/floats"
+    errorMessage = "matrix must be a matrix (list of lists) of integers/floats"
     if not matrix:
-        raise TypeError(errormessage)
+        raise TypeError(errorMessage)
     if not isinstance(matrix, list):
-        raise TypeError(errormessage)
+        raise TypeError(errorMessage)
     for lists in matrix:
         if not isinstance(lists, list):
-            raise TypeError(errormessage)
+            raise TypeError(errorMessage)
         for index in lists:
             if not isinstance(index, (int, float)):
-                raise TypeError(errormessage)
+                raise TypeError(errorMessage)
     for lists in matrix:
         if len(lists) == 0:
-            raise TypeError(errormessage)
+            raise TypeError(errorMessage)
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if not all(len(lists) == len(matrix[0]) for lists in matrix):
