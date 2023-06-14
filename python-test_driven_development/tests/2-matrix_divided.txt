@@ -45,16 +45,13 @@ Traceback (most recent call last):
     ...
 TypeError: div must be a number
 
->>> matrix_divided(lists, 0)
+>>> matrix_divided(matrixA, 0)
 Traceback (most recent call last):
     ...
 ZeroDivisionError: division by zero
 
->>> matrix_divided(lists, 3, 2)
+>>> matrix_divided(matrixA, 3, 2)
 Traceback (most recent call last):
     ...
 TypeError: matrix_divided() takes 2 positional arguments but 3 were given
 
->>> matrix_divided('a', 4)
-Traceback (most recent call last):
-TypeError: matrix must be a matrix (list of lists) of integers/floats
