@@ -5,6 +5,11 @@
 
 
 def text_indentation(text):
+    """matrix_divided
+
+    Args:
+        text (): contain the text for the test
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for delimiter in ".?:":
