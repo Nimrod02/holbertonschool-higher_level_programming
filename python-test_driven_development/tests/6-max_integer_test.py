@@ -26,7 +26,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1.0, 2.0, 3.0]), 3.0)
         self.assertEqual(max_integer([0.0, -1.0]), 0.0)
         self.assertEqual(max_integer([0.0, 1.0, 2.0, 3.0, 4.0]), 4.0)
-        self.assertEqualt(max_integer([{1, 9}, {2, 3}, {1}, {2}]), {1, 9})
+        self.assertEqual(max_integer([{1, 9}, {2, 3}, {1}, {2}]), {1, 9})
 
     def test_string(self):
         self.assertEqual(max_integer("abcd"), "d")
