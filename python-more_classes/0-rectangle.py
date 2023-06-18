@@ -1,4 +1,6 @@
-"""Module 0-rectangle
+#!/usr/bin/python3
+"""
+Module 0-rectangle
 """
 
 
