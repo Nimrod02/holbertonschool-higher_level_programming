@@ -28,6 +28,9 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([0.0, 1.0, 2.0, 3.0, 4.0]), 4.0)
         self.assertEqual(max_integer([{1, 9}, {2, 3}, {1}, {2}]), {1, 9})
 
+    def test_lists(self):
+        self.assertEqual(max_integer([1, 2], [3, 4], [5, 6]), [5, 6])
+
     def test_string(self):
         self.assertEqual(max_integer("abcd"), "d")
         self.assertEqual(max_integer("123456789"), "9")
