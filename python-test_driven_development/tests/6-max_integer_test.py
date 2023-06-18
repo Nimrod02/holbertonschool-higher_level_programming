@@ -17,17 +17,16 @@ class TestMaxInteger(unittest.TestCase):
         function = __import__("6-max_integer").max_integer.__doc__
         self.assertTrue(len(function) > 1)
 
-    def test_max_int(self):
+    def test_max_int_float(self):
         self.assertEqual(max_integer([0]), 0)
         self.assertEqual(max_integer([1, 2, 3]), 3)
         self.assertEqual(max_integer([0, -1, 2]), 2)
         self.assertEqual(max_integer([0, 1, 2, 3, 4]), 4)
-
-    def test_max_float(self):
         self.assertEqual(max_integer([0.0]), 0.0)
         self.assertEqual(max_integer([1.0, 2.0, 3.0]), 3.0)
         self.assertEqual(max_integer([0.0, -1.0]), 0.0)
         self.assertEqual(max_integer([0.0, 1.0, 2.0, 3.0, 4.0]), 4.0)
+        self.assertEqualt(max_integer([{1, 9}, {2, 3}, {1}, {2}]), {1, 9})
 
     def test_string(self):
         self.assertEqual(max_integer("abcd"), "d")
