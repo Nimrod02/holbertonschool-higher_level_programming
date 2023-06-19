@@ -2,6 +2,8 @@
 """
 module 0-lookup
 """
+
+
 def lookup(obj):
     """lookup
 
