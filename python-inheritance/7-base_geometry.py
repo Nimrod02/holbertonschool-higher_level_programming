@@ -17,6 +17,15 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """
+        Resume:
+            Verify if value is a interger
+
+        Args:
+            -name: always string, the name of Geometry.
+            -value: interger to ckeck
+        """
+
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
