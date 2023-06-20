@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module 6-base_geometry
+module 8-rectangle
 """
 
 
@@ -33,18 +33,18 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-        """
-            class baseGeometry
-        """
-        def __init__(self, width, height):
-            """Rectangle init
+    """
+        class baseGeometry
+    """
+    def __init__(self, width, height):
+        """Rectangle init
 
-            Args:
-                width (int): width of the rectangle
-                height (int): height of the rectangle
-            """
-            self.__width = width
-            self.__height = height
+        Args:
+            width (int): width of the rectangle
+            height (int): height of the rectangle
+        """
+        self.__width = width
+        self.__height = height
 
-            self.integer_validator("width", self.__width)
-            self.integer_validator("height", self.__height)
+        self.integer_validator("width", self.__width)
+        self.integer_validator("height", self.__height)
