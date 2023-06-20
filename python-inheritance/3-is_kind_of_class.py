@@ -14,4 +14,5 @@ def is_kind_of_class(obj, a_class):
     Returns:
         _type_: the result of the comparison
     """
-    return True if type(obj) is a_class or issubclass(type(obj), a_class) else False
+    return True if type(obj) is a_class or \
+        issubclass(type(obj), a_class) else False
