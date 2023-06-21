@@ -3,9 +3,10 @@
 module 4-from_json_string
 """
 
+import json
+
 
 def from_json_string(my_str):
-    import json
     """from_json_string
 
     Args:
