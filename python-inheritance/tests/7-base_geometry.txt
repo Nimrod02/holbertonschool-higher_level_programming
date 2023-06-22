@@ -1,45 +1,54 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+Now use it:
+
 	>>> bg = BaseGeometry()
+	>>> type(bg)
+	<class '7-base_geometry.BaseGeometry'>
 
 	>>> bg.area()
 	Traceback (most recent call last):
 	Exception: area() is not implemented
 
-	>>> bg.integer_validator("idk", 3.14)
+
+	>>> bg.integer_validator("betty", 3.14)
 	Traceback (most recent call last):
-	TypeError: idk must be an integer
+	TypeError: betty must be an integer
 
-	>>> bg.integer_validator("idk", "cat")
+	>>> bg.integer_validator("betty", "holberton")
 	Traceback (most recent call last):
-	TypeError: idk must be an integer
+	TypeError: betty must be an integer
 
-	>>> bg.integer_validator("idk", None)
+	>>> bg.integer_validator("betty", True)
 	Traceback (most recent call last):
-	TypeError: idk must be an integer
+	TypeError: betty must be an integer
 
-	>>> bg.integer_validator("idk", {1, 2, 3})
+	>>> bg.integer_validator("betty", None)
 	Traceback (most recent call last):
-	TypeError: idk must be an integer
+	TypeError: betty must be an integer
 
-	>>> bg.integer_validator("idk", (1, 2, 3))
+	>>> bg.integer_validator("betty", {1, 2, 3})
 	Traceback (most recent call last):
-	TypeError: idk must be an integer
+	TypeError: betty must be an integer
 
-	>>> bg.integer_validator("idk", [1, 2, 3])
+	>>> bg.integer_validator("betty", (1, 2, 3))
 	Traceback (most recent call last):
-	TypeError: idk must be an integer
+	TypeError: betty must be an integer
 
-	>>> bg.integer_validator("idk", 0)
+	>>> bg.integer_validator("betty", [1, 2, 3])
 	Traceback (most recent call last):
-	ValueError: idk must be greater than 0
+	TypeError: betty must be an integer
 
-	>>> bg.integer_validator("idk", -10)
+	>>> bg.integer_validator("betty", 0)
 	Traceback (most recent call last):
-	ValueError: idk must be greater than 0
+	ValueError: betty must be greater than 0
 
-	>>> bg.integer_validator("idk", 10)
+	>>> bg.integer_validator("betty", -98)
+	Traceback (most recent call last):
+	ValueError: betty must be greater than 0
 
-	>>> bg.integer_validator("idk", (10))
+	>>> bg.integer_validator("betty", 98)
 
-	>>> bg.integer_validator("", 10)
+	>>> bg.integer_validator("betty", (98))
+
+	>>> bg.integer_validator("", 98)
