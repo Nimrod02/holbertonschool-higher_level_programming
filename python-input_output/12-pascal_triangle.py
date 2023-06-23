@@ -1,6 +1,18 @@
 #!/usr/bin/python3
+"""
+module 12-pascal_triangle
+"""
+
 
 def pascal_triangle(n):
+    """pascal_triangle
+
+    Args:
+        n (int): contain the value 5 for the triangle
+
+    Returns:
+        list: return triangle that is a list of list
+    """
     triangle = []
     current_row = [1]
     if n <= 0:
