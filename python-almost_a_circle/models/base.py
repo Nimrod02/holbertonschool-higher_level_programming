@@ -3,9 +3,11 @@
 module base
 """
 
+
 class Base:
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """constructor
 
@@ -14,6 +16,6 @@ class Base:
         """
         if id is not None:
             self.id = id
-        else :
+        else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
