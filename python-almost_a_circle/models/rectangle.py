@@ -94,3 +94,10 @@ class Rectangle(Base):
         """
         for rows in range(self.height):
                 print("#" * self.width)
+
+    def __str__(self):
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += "(" + str(self.id) + ") "
+        string += str(self.__x) + "/" + str(self.__y) + " - "
+        string += str(self.__width) + "/" + str(self.__height)
+        return string
