@@ -26,39 +26,39 @@ class Rectangle(Base):
             id (int, optional): id from Basqse class. Defaults to None.
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__y = y
-        self.__x = x
+        self.width = width
+        self.height = height
+        self.y = y
+        self.x = x
 
     @property
     def width(self):
-        return self.width
+        return self.__width
 
     @property
     def height(self):
-        return self.height
+        return self.__height
 
     @property
     def x(self):
-        return self.x
+        return self.__x
 
     @property
     def y(self):
-        return self.y
+        return self.__y
 
     @width.setter
     def width(self, value):
-        self.width = value
+        self.__width = value
 
     @height.setter
     def height(self, value):
-        self.height = value
+        self.__height = value
 
     @x.setter
     def x(self, value):
-        self.x = value
+        self.__x = value
 
     @y.setter
     def y(self, value):
-        self.y = value
+        self.__y = value
