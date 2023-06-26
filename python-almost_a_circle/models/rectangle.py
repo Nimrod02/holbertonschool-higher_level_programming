@@ -92,8 +92,11 @@ class Rectangle(Base):
         """
         display the rectangle
         """
+        for axes in range(self.y):
+            print()
+
         for rows in range(self.height):
-                print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         string = "[" + str(self.__class__.__name__) + "] "
