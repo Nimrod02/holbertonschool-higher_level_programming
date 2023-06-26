@@ -5,6 +5,10 @@ module base
 
 
 class Base:
+    """
+    base class
+    will be use for all class
+    """
 
     __nb_objects = 0
 
