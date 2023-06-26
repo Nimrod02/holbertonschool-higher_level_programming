@@ -14,6 +14,7 @@ class Rectangle(Base):
     Args:
         Base (class): base class that rectangle inherite
     """
+    print_symbol = "#"
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """define the axes and the width and height
@@ -86,3 +87,10 @@ class Rectangle(Base):
             int: area of the rectangle
         """
         return (self.__height * self.__width)
+
+    def display(self):
+        """
+        display the rectangle
+        """
+        for rows in range(self.height):
+                print("#" * self.width)
