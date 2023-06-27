@@ -35,7 +35,7 @@ class Base:
         Returns:
             dictionary: the python string of the dictionary
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or list_dictionaries is []:
             list_dictionaries = []
             return list_dictionaries
         else:
