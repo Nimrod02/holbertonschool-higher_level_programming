@@ -52,8 +52,8 @@ cd mode
                 self.y = args[4]
         if 'id' in kwargs:
             self.id = kwargs['id']
-        if 'width' in kwargs:
-            self.width = kwargs['width']
+        if 'size' in kwargs:
+            self.size = kwargs['size']
         if 'x' in kwargs:
             self.x = kwargs['x']
         if 'y' in kwargs:
