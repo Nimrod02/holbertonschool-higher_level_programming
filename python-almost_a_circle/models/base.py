@@ -59,7 +59,7 @@ class Base:
             json_string = cls.to_json_string(new_dict)
             json.dump(new_dict, json_file)
 
-        if type(list_objs[0]).__name__ == "Square":
+        elif type(list_objs[0]).__name__ == "Square":
             new_dict = [item.to_dictionary() for item in list_objs]
             json_string = cls.to_json_string(new_dict)
             json.dump(new_dict, json_file)
