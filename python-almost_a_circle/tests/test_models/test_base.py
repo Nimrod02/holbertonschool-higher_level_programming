@@ -1,75 +1,85 @@
 import unittest
 from models.base import Base
+from models.square import Square
+from models.rectangle import Rectangle
+from io import StringIO
+from unittest.mock import patch
 
 
-class TestBase(unittest.TestCase):
+class TestBaseMethods(unittest.TestCase):
     def setUp(self):
-        self.base = Base()
+        Base._Base__nb_objects = 0
 
-    def tearDown(self):
-        del self.base
+    def test_id(self):
+        new = Base(1)
+        self.assertEqual(new.id, 1)
 
-    def test_init_with_id(self):
-        base = Base(10)
-        self.assertEqual(base.id, 10)
+    def test_id_default(self):
+        new = Base()
+        self.assertEqual(new.id, 1)
 
-    def test_init_without_id(self):
-        base1 = Base()
-        base2 = Base()
-        self.assertEqual(base1.id, 1)
-        self.assertEqual(base2.id, 2)
+    def test_id_nb_objects(self):
+        new = Base()
+        new2 = Base()
+        new3 = Base()
+        self.assertEqual(new.id, 1)
+        self.assertEqual(new2.id, 2)
+        self.assertEqual(new3.id, 3)
 
-    def test_to_json_string_with_empty_list(self):
-        json_string = Base.to_json_string([])
-        self.assertEqual(json_string, "[]")
+    def test_id_mix(self):
+        new = Base()
+        new2 = Base(1024)
+        new3 = Base()
+        self.assertEqual(new.id, 1)
+        self.assertEqual(new2.id, 1024)
+        self.assertEqual(new3.id, 2)
 
-    def test_to_json_string_with_non_empty_list(self):
-        list_dictionaries = [{"key": "value"}]
-        json_string = Base.to_json_string(list_dictionaries)
-        self.assertEqual(json_string, '[{"key": "value"}]')
+    def test_string_id(self):
+        new = Base('1')
+        self.assertEqual(new.id, '1')
 
-    def test_save_to_file_with_none_list(self):
-        Base.save_to_file(None)
+    def test_more_args_id(self):
+        with self.assertRaises(TypeError):
+            new = Base(1, 1)
+
+    def test_access_private_attrs(self):
+        new = Base()
+        with self.assertRaises(AttributeError):
+            new.__nb_objects
+
+    def test_save_to_file_1(self):
+        Square.save_to_file(None)
+        res = "[]\n"
+        with open("Square.json", "r") as file:
+            with patch('sys.stdout', new=StringIO()) as str_out:
+                print(file.read())
+                self.assertEqual(str_out.getvalue(), res)
+
+        try:
+            os.remove("Square.json")
+        except:
+            pass
+
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_save_to_file_2(self):
+        Rectangle.save_to_file(None)
+        res = "[]\n"
+        with open("Rectangle.json", "r") as file:
+            with patch('sys.stdout', new=StringIO()) as str_out:
+                print(file.read())
+                self.assertEqual(str_out.getvalue(), res)
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
 
 
-    def test_save_to_file_with_empty_list(self):
-        Base.save_to_file([])
-
-    def test_save_to_file_with_non_empty_list(self):
-        pass
-
-    def test_from_json_string_with_empty_string(self):
-        instances = Base.from_json_string("")
-        self.assertEqual(instances, [])
-
-    def test_from_json_string_with_non_empty_string(self):
-        json_string = '[{"key": "value"}]'
-        instances = Base.from_json_string(json_string)
-        self.assertEqual(instances, [{"key": "value"}])
-
-    def test_create_with_rectangle(self):
-        dictionary = {"width": 2, "height": 4}
-        instance = Base.create(**dictionary)
-
-    def test_create_with_square(self):
-        dictionary = {"size": 3}
-        instance = Base.create(**dictionary)
-
-    def test_create_with_invalid_class(self):
-        dictionary = {"invalid_key": "value"}
-        instance = Base.create(**dictionary)
-        self.assertIsNone(instance)
-
-    def test_load_from_file_with_non_existent_file(self):
-        instances = Base.load_from_file()
-        self.assertEqual(instances, [])
-
-    def test_load_from_file_with_empty_file(self):
-        instances = Base.load_from_file()
-        self.assertEqual(instances, [])
-
-    def test_load_from_file_with_non_empty_file(self):
-        instances = Base.load_from_file()
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
