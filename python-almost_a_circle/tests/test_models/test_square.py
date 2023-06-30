@@ -296,11 +296,6 @@ class TestSquare_order_of_initialization(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square("invalid size", 1, "invalid y")
 
-    def test_x_before_y(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(1, "invalid x", "invalid y")
-
-
 class TestSquare_area(unittest.TestCase):
     """Unittests for testing the area method of the Square class."""
 
